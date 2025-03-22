@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dimzz Store - Jasa Pembuatan Website Murah</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Add smooth transitions */
+    .nav-link, .btn, .price-item, .cart-items, .contact form input, .contact form textarea, .contact form button {
+      transition: all 0.3s ease;
+    }
+
+    /* Add animation for the hero section text */
+    .animated-text {
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+     
+    /* Add smooth color-changing background animation */
+    body {
+      background: linear-gradient(90deg, #000, #fff, #000);
+      background-size: 600% 600%;
+      animation: colorChange 10s ease infinite;
+    }
+
+    @keyframes colorChange {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Add color-changing text animation */
+    .colorful-text {
+      font-size: 1.2em;
+      font-weight: bold;
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: textColorChange 5s ease infinite;
+      background-size: 400% 400%;
+    }
+
+    @keyframes textColorChange {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Add welcome message effect */
+    .welcome-message {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      animation: welcomeFadeIn 3s ease-in-out;
+    }
+
+    @keyframes welcomeFadeIn {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* Add styles for cart items */
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+      opacity: 1;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .cart-item button {
+      background-color: #ff0000;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cart-item button:hover {
+      background-color: #cc0000;
+    }
+
+    /* Add shadow to icons */
+    .nav-link i {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-link i:hover {
+      transform: scale(1.2);
+      color: #ff69b4;
+    }
+
+    /* Add styles for donation section */
+    .donation {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .donation a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ff69b4;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .donation a:hover {
+      background-color: #ff1493;
+    }
+
+    .donation i {
+      margin-right: 10px;
+    }
+
+    /* Add styles for testimonials */
+    .testimonials {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .testimonial {
+      margin: 20px 0;
+    }
+
+    .stars {
+      display: inline-block;
+    }
+
+    .stars input {
+      display: none;
+    }
+
+    .stars label {
+      float: right;
+      padding: 10px;
+      font-size: 24px;
+      color: #444;
+      transition: all 0.2s;
+    }
+
+    .stars input:checked ~ label,
+    .stars input:hover ~ label,
+    .stars label:hover ~ label {
+      color: #fd4;
+    }
+
+    /* Add styles for gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      padding: 20px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Add styles for VIP icon */
+    .vip-icon {
+      display: inline-block;
+      font-size: 24px;
+      color: gold;
+      cursor: pointer;
+      animation: shine 2s infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .vip-icon:hover {
+      transform: scale(1.2);
+    }
+
+    @keyframes shine {
+      0% { text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 15px gold, 0 0 20px gold; }
+      50% { text-shadow: 0 0 10px gold, 0 0 20px gold, 0 0 30px gold, 0 0 40px gold; }
+      100% { text-shadow: 0 0 5px gold, 0 0 10px gold, 0 0 15px gold, 0 0 20px gold; }
+    }
+
+    .vip-message {
+      display: none;
+      margin-top: 10px;
+      font-size: 1.2em;
+      color: #fff;
+      background-color: #ff69b4;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    /* Add styles for moving text */
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+    }
+
+    .marquee p {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 15s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-100%, 0); }
+    }
+
+    /* Add styles for promotional text */
+    .promo-text {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #ff69b4;
+      text-align: center;
+      margin: 20px 0;
+      animation: bounce 2s infinite, colorChange 5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-30px);
+      }
+      60% {
+        transform: translateY(-15px);
+      }
+    }
+
+    @keyframes colorChange {
+      0% { color: #ff69b4; }
+      25% { color: #ff1493; }
+      50% { color: #ff69b4; }
+      75% { color: #ff1493; }
+      100% { color: #ff69b4; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="Dimzz Store Logo">
+      <h1>Dimzz Store</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#gallery" class="nav-link"><i class="fas fa-images"></i> Galeri</a></li>
+        <li><a href="#price" class="nav-link"><i class="fas fa-tag"></i> Harga</a></li>
+        <li><a href="#cart" class="nav-link"><i class="fas fa-shopping-cart"></i> Keranjang</a></li>
+        <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h2 class="animated-text">Jasa Pembuatan Website Murah</h2>
+    <p class="welcome-message">Selamat Datang di Dimzz Store! Kami siap membantu Anda dengan layanan terbaik.</p>
+    <p>Solusi cepat dan terjangkau untuk website portofolio, bisnis, dan toko online.</p>
+    <a href="#services" class="btn">Lihat Layanan</a>
+    <a href="https://wa.me/6287740794085" class="btn">Pesan Sekarang</a>
+  </section>
+
+  <section id="description" class="description">
+    <h2>Deskripsi Jasa</h2>
+    <p class="colorful-text">Kami menawarkan jasa pembuatan website murah dan terpercaya. Dengan pengalaman bertahun-tahun, kami siap membantu Anda membuat website portofolio, bisnis, dan toko online dengan cepat dan terjangkau.</p>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <h2>Galeri</h2>
+    <div class="gallery-grid">
+      <img src="assets/images/webdev1.jpg" alt="Web Development Project 1">
+      <img src="assets/images/webdev2.jpg" alt="Web Development Project 2">
+      <img src="assets/images/webdev3.jpg" alt="Web Development Project 3">
+      <img src="assets/images/webdev4.jpg" alt="Web Development Project 4">
+    </div>
+  </section>
+
+  <section id="price" class="price">
+    <h2>Harga</h2>
+    <div class="price-list">
+      <div class="price-item">
+        <h3>Website Portofolio</h3>
+        <p>Rp 50.000</p>
+      </div>
+      <div class="price-item">
+        <h3>Website Bisnis</h3>
+        <p>Rp 100.000</p>
+      </div>
+      <div class="price-item">
+        <h3>Harga Lainnya</h3>
+        <div class="marquee">
+          <p>20-30k | 40-50k | 50-100k | 100-200k | 200-500k | 500-1000k</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cart" class="cart">
+    <h2>Keranjang</h2>
+    <div class="cart-items">
+      <p>Belum ada item di keranjang.</p>
+    </div>
+    <button onclick="addItem()">Tambah Item</button>
+  </section>
+
+  <section id="donation" class="donation">
+    <h2>Donasi</h2>
+    <a href="tel:087740794085"><i class="fas fa-heart"></i> Donasi ke 087740794085</a>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <h2>Testimoni Pelanggan</h2>
+    <div class="testimonial">
+      <p>"Layanan yang sangat memuaskan! Website saya jadi cepat dan bagus."</p>
+      <div class="stars">
+        <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5 stars">&#9733;</label>
+        <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 stars">&#9733;</label>
+        <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 stars">&#9733;</label>
+        <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 stars">&#9733;</label>
+        <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 star">&#9733;</label>
+      </div>
+    </div>
+    <div class="testimonial">
+      <p>"Harga terjangkau dan hasil memuaskan. Sangat direkomendasikan!"</p>
+      <div class="stars">
+        <input type="radio" id="star10" name="rating2" value="5"><label for="star10" title="5 stars">&#9733;</label>
+        <input type="radio" id="star9" name="rating2" value="4"><label for="star9" title="4 stars">&#9733;</label>
+        <input type="radio" id="star8" name="rating2" value="3"><label for="star8" title="3 stars">&#9733;</label>
+        <input type="radio" id="star7" name="rating2" value="2"><label for="star7" title="2 stars">&#9733;</label>
+        <input type="radio" id="star6" name="rating2" value="1"><label for="star6" title="1 star">&#9733;</label>
+      </div>
+    </div>
+  </section>
+
+  <section id="vip" class="vip">
+    <h2>VIP</h2>
+    <i class="fas fa-crown vip-icon" onclick="showVipMessage()"></i>
+    <div class="vip-message" id="vipMessage">
+      Jadilah VIP dengan sangat murah hanya dengan Rp 150.000. <a href="https://wa.me/6287740794085" style="color: #fff; text-decoration: underline;">Hubungi kami di WhatsApp</a>
+    </div>
+  </section>
+
+  <section id="promo" class="promo">
+    <p class="promo-text">Ayo Berlangganan VIP! Kapan lagi ada yang murah kayak gini?</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Kontak</h2>
+    <form id="contactForm">
+      <label for="name">Nama:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="message">Pesan:</label>
+      <textarea id="message" name="message" required></textarea>
+      
+      <button type="submit">Kirim Pesan</button>
+    </form>
+    <p>Hubungi kami di nomor: <strong>6287740794085</strong></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Dimzz Store. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function addItem() {
+      const cartItems = document.querySelector('.cart-items');
+      const newItem = document.createElement('div');
+      newItem.className = 'cart-item';
+      newItem.innerHTML = `
+        <span>Item Baru</span>
+        <button onclick="removeItem(this)">Hapus</button>
+      `;
+      cartItems.appendChild(newItem);
+      if (cartItems.querySelector('p')) {
+        cartItems.querySelector('p').remove();
+      }
+    }
+
+    function removeItem(button) {
+      const cartItem = button.parentElement;
+      cartItem.style.opacity = '0';
+      cartItem.style.transform = 'translateY(-20px)';
+      setTimeout(() => {
+        cartItem.remove();
+        const cartItems = document.querySelector('.cart-items');
+        if (cartItems.children.length === 0) {
+          const emptyMessage = document.createElement('p');
+          emptyMessage.textContent = 'Belum ada item di keranjang.';
+          cartItems.appendChild(emptyMessage);
+        }
+      }, 300);
+    }
+
+    function showVipMessage() {
+      const vipMessage = document.getElementById('vipMessage');
+      vipMessage.style.display = 'block';
+    }
+
+    // Auto-scroll feature
+    function autoScroll() {
+      window.scrollBy(0, 1);
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        window.scrollTo(0, 0);
+      }
+    }
+
+    setInterval(autoScroll, 50);
+  </script>
+</body>
+</html>

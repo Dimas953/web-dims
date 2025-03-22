@@ -1,0 +1,16 @@
+dimzz-store/
+│
+├── index.html
+├── style.css
+├── script.js
+└── assets/
+    ├── images/
+    │   ├── logo.png
+    │   ├── product1.jpg
+    │   └── product2.jpg
+    └── icons/
+        ├── home.png
+        ├── cart.png
+        ├── gallery.png
+        ├── contact.png
+        └── price.png
